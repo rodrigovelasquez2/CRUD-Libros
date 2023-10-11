@@ -19,10 +19,9 @@ public class CrudLibrosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        //   Prueba para insertar datos
-//        Registro libro1 = new Registro("Caballero Carmelo", "Abraham", 1990, "Epopeya", "Era un gallo");
-//        Registro libro2 = new Registro("Libro3", "Autor", 2010, "Genero2", "Resumen222");
-//        repository.save(libro1); // Guarda el libro
-//        repository.save(libro2); // Guarda el libro
+        Registro libro1 = new Registro("Caballero Carmelo", "Abraham", 1990, "Epopeya", "Era un gallo");
+        Registro libro2 = new Registro("Libro3", "Autor", 2010, "Genero2", "Resumen222");
+        repository.save(libro1); // Guarda el libro
+        repository.save(libro2); // Guarda el libro
     }//run
 }//CrudLibrosApplication

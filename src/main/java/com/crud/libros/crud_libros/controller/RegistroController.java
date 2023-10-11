@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class RegistroController {
@@ -13,15 +14,15 @@ public class RegistroController {
     private RegistroServices registroServices;
 
     //ListarLibros
-    @GetMapping("/index") // HTTP de la pagina
+    @GetMapping("/") // HTTP de la pagina
     public String listarLibrosRegistrados(Model modelo ){
-        modelo.addAttribute("index",registroServices.listarLibrosRegistrados());
+        modelo.addAttribute("libros",registroServices.listarLibrosRegistrados());
         return "index";// Este debe ser el nombre de tu archivo HTML sin la extensión.
     }//listarLibrosRegistrados
 
     //RegistrarLibros
-    @GetMapping("/index/RegistrarLibros") // HTTP de la pagina
-    public String registrarLibros(Model modelo){
+    @PostMapping("/registrar") // HTTP de la pagina
+    public String registrarLibros(Model modelo, Registro registro){
         Registro libro = new Registro();
         modelo.addAttribute("libro",libro);
         return "RegistrarLibros";
